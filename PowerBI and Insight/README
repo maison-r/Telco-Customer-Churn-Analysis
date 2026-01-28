@@ -1,0 +1,45 @@
+- explain what the dahsboard shows
+simmarise key inisghts 
+how to use the file 
+inlcude an overview 
+- ------
+
+Key insights from the dashboard include:
+
+Customers on month-to-month contracts exhibit significantly higher churn rates compared to long-term contracts.
+
+Short-tenure customers are more likely to churn, particularly within the first 12 months.
+
+A disproportionate share of revenue at risk is driven by a relatively small segment of high-value customers.
+
+Certain service combinations show stronger correlations with churn than others.
+
+
+alos include an inisghts file that inlcudes a full explanation of the visuals page by page 
+# Dashboard Insights
+
+## Page 1: Executive Overview
+This page provides a high-level summary of customer churn and revenue impact. KPIs such as churn rate, retention rate, ARPU, and revenue at risk allow stakeholders to quickly assess overall business health.
+
+Key observations:
+- Churn is concentrated among short-tenure, month-to-month customers.
+- Revenue at risk is materially lower for long-term contracts despite higher customer counts.
+
+---
+
+## Page 2: Churn Drivers & Segmentation
+This page explores the factors most strongly associated with churn, including contract type, tenure, and service subscriptions.
+
+Key observations:
+- Month-to-month contracts have the highest churn rate across all tenure groups.
+- Customers with fewer bundled services are more likely to churn.
+- Payment method and contract flexibility appear to influence churn behaviour.
+
+---
+
+## Page 3: Revenue & Customer Value
+This page focuses on financial impact, highlighting ARPU, high-value churners, and estimated customer lifetime value.
+
+Key observations:
+- High-value churners represent a small portion of customers but account for a large share of revenue at risk.
+- Longer tenure significantly increases estimated CLTV.
