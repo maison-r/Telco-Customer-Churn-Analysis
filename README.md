@@ -57,10 +57,10 @@ In this project i foucsed on several key metrics that are cruicial for sundersta
 - customer lifetime value : the totoal expected revenue per customer ove their tenure calcuiaterd by their monhtly charges and tenure
 - high value churners: churned customers witht he highest revenue contribuution
 
-#E PowerBi dahsbaord 
-i designed the dahbaord as a thre page inertactuive report to give the best insights into the customer dataste. 
+# PowerBi dahsbaord 
+I designed the dahbaord as a thre page inertactuive report to give the best insights into the customer dataste. 
 
-##Page 1 - the overview 
+## Page 1 - the overview 
 this page provides a basic overview highlights the customer health within the company
 - KPI cards for Total customers, Churn Rate, Retention RAte, ARPU RAte and REvenue at risk
 - combo charts for revenue at risk by tenure group, crevenue at risk by contract type and revenue at risk by payment method.
@@ -74,7 +74,7 @@ this page focuses on identofying the drivers or churn and how that impacts the c
 - churn rate by service count
 - churn rate by payment method
 
-##Page 3 Revenue and CLTV analysis 
+## Page 3 Revenue and CLTV analysis 
 this page provides analysis for the fincancial impactand lifetimevalue of the customers
 - CLTV by tenure group and contract type
 - revenue at risk by contract
@@ -119,11 +119,11 @@ IF(
 )
 ```
 
-#Key Inisghts 
+# Key Inisghts 
 based on my analysis we can see that the Month-to-Month contract ahve the highest chrtun rate which highl.ights the imporantance of loongterm reention stratagies. the high value churners also fall into the month-to-motn contract which syuggestsd theya re critical taregts for renetion campaigns. customers with certain payment methods and less services also ccorrelate with high churners wehioch guive sus ungsights into target ,arkeringa dn service improvements. encouraging customers to use more than two seerviceas can decrease the churn rate by at least 6.41%. from this analysis we see that custonmers with longer tenuire and multip year contracts are more likely to stay which inducates that contract type and tenure storngly influycen the churn rate. 
 
 
-#Tools anbd libraries
+# Tools anbd libraries
 for this project i mostly used python for the cleaning and analysis, this uncluded libraies such as numpy seabord. 
 i then used PowerBi to create the dahsboard and used a variatey opf differnt visualisations andf DaX measures to prvoide an insighful overview. 
 
