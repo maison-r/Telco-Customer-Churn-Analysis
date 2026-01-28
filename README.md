@@ -1,101 +1,110 @@
-# Customer Churn & CLTV Analysis PRoject 
+# Customer Churn & CLTV Analysis Project 
 
-In this project i wanted to explore the way customer churn rates impact a telecommunicatons business. Since customer churn is a key metirc in subscription based business it is a significant insight to understand since it directly impacts revenue. For this project i analysed customer churn for a telecomunciatiosn business ysing TELCO customer churn Dataset from Kaggle. the objecyive of this project was to understand which segemnts are at high risk of churning, calcualate reveinue at risk and estimate the lifetime value of customers. 
+In this project I wanted to explore the way customer churn rates impact a telecommunications business. Since customer churn is a key metric in subscription based business it is a significant insight to understand since it directly impacts revenue. For this project I analysed customer churn for a telecommunications business using TELCO customer churn Dataset from Kaggle. The objective of this project was to understand which segments are at high risk of churning, calculate revenue at risk and estimate the lifetime value of customers. 
 
-To acheive this i used data cleaning technique, feature engeneering, metric calcualtions and interactive viusalisations using python and power BI. the final dashboard prvides a comprehensive overview of the companies health enabling teh business to target retenetion strategies effectivly. 
+I chose this dataset because churn directly correlated with revenue loss in subscription based business. This dataset was particularly well suited to churn analysis as it contains a wide range of customer-level and business-level features, including service subscriptions, contract types, tenure, and monthly charges. These variables allow for a holistic analysis of customer behaviour and the factors that contribute to churn.
+
+Working with this dataset allowed me to analyse churn trends, identify high-risk customer segments, and estimate revenue at risk. Through this project, I was able to apply my data analysis skills end-to-end from data cleaning and feature engineering to insight generation and dashboard visualisation while delivering clear, business-focused insights to support data-driven decision-making.
+
+To achieve this I used data cleaning technique, feature engineering, metric calculations and interactive visualisations using python and power BI. The final dashboard provides a comprehensive overview of the companies health enabling the business to target retention strategies effectively. 
+
+# Repo Navigation
+* /DataSet - raw dataset
+* /EDA & Analysis - Jupyter notebook for cleaning and analysis
+* /PowerBI & Insights = .pbix dashboard file
 
 # Project Objectives
-the main objectives for thsi project were:
-1. Measure customer churna dn retention: Identify the percentage of customers that were leaving the company and identifying trends based on contract type, tenure and service usage.
-2. analysing financial impact: calcualte average value per customer, rentntion at risk and identofy high value churners.
-3. estimate customer lifetime value : calculate the overall revenue based on a customers lifetime with teh comapny and highlight key segments based on high revenue potential.
-4. segment customers : segment customers by tenure group, contract type and service usage to identify patterns in churn behaviour.
-5. visualuase insights in power BI: design a multi-page dashbaord in PowerBI to provide a clear, actional overview of churn risk, revenue impact and CLTV. 
+The main objectives for this project was:
+1. Measure customer churn and retention: Identify the percentage of customers that were leaving the company and identifying trends based on contract type, tenure and service usage.
+2. Analysing financial impact: calculate average value per customer, retention at risk and identify high value churners.
+3. Estimate customer lifetime value : calculate the overall revenue based on a customers lifetime with the company and highlight key segments based on high revenue potential.
+4. Segment customers : segment customers by tenure group, contract type and service usage to identify patterns in churn behaviour.
+5. Visualise insights in power BI: design a multi-page dashboard in PowerBI to provide a clear, actional overview of churn risk, revenue impact and CLTV. 
 
 
 # Dataset
-the dataset  i used for thios prject includesd around 7,000 customer records with the main attributes being:
-- CustyomerOd : a unique identifier for each customer
-- Churn Value : a boolean flag indiating if the customer churned
-- Monthly Charges: the monthly ervenue from each customer
-- Tenure Months: the number of monthly a customer has been active witht eh company
+The dataset  I used for this project includes around 7,000 customer records with the main attributes being:
+- CustomerID : a unique identifier for each customer
+- Churn Value : a Boolean flag indicating if the customer churned
+- Monthly Charges: the monthly revenue from each customer
+- Tenure Months: the number of monthly a customer has been active with the company
 - Contract:: the type of contract the customer has either month- to-month, year one or year two
-- Services: this incldes the different types of services the customer receives
-- Payment Method: the customers prefered payment method
+- Services: this includes the different types of services the customer receives
+- Payment Method: the customers preferred payment method
 
 # Data Cleaning 
-before analysing teh dataset it needed to be cleaned and transformed. during the cleaning process io checked for any missing or null values and hadled thema pprpiatly, converted the yes/no columns into boolean values and satandardised column names to avoid error in power Bi.
+Before analysing the dataset it needed to be cleaned and transformed. During the cleaning process I checked for any missing or duplicate values and handled them appropriately, converted the yes/no columns into Boolean values and standardised column names to avoid error in power Bi.
 
 ## Feature engineering
-foer thr feature engineering i createda  few new groups such as tenure groupsing, contract grouping and high-alued customer identification. these groups helped me identify trends in customer churn rates. 
+For the feature engineering I created  few new groups such as tenure grouping, contract grouping and high-valued customer identification, these groups helped me identify trends in customer churn rates. 
 
 ### Tenure Grouping
-I grouped customeers into tenure groups based on their active months. 
+I grouped customers into tenure groups based on their active months. 
 ```bash
 Bins = [0, 12, 24, 48, 100]
 labels = [ '0-12 Months', '13-24 Months', '25-48 Months', '49+ Months']
 customer['Tenure_Group'] = pd.cut(customer['Tenure_Group'], bins=Bins, labels=lables, right=False)
 ```
 ### Contract grouping 
-the opriginal dataset had boolean columsn fro each contract type so i created a singel contract ttype columns to categorise customers month-to-month, year one or year two. this allowed for easier aggregationa nd visualisation. 
+The original dataset had Boolean columns for each contract type so I created a single contract type columns to categorise customers month-to-month, year one or year two, this allowed for easier aggregational and visualisation. 
 
 ### High-Value customers 
-i created a column that identoifed the top 25% of monthly chrges. this featuresd enabled analysis if high value churnerd andf the corresponding revenue risk. 
+I created a column that identified the top 25% of monthly charges, this features enabled analysis of high value churned and the corresponding revenue risk. 
 
 ### Service Count
-i created a new feature that counted the number of services each customer was using to explore correlation betwwen service usage and churn rate. The customers that hadx nhigher nuimber of services with teh company were less likely tyop churn compared to customers with lower services. 
+I created a new feature that counted the number of services each customer was using to explore correlation between service usage and churn rate. The customers that had higher number of services with the company were less likely to churn compared to customers with lower services. 
 
 ### Encoding categorical variables
-for sopme of the columsn they were categorical data types so i used one-hot encoding to make iot easier to use during analysis without looking important categories such as Contract or Payment methods. 
+For some of the columns they were categorical data types so I used one-hot encoding to make it easier to use during analysis without losing important categories such as Contract or Payment methods. 
 
 # Metrics
-In this project i foucsed on several key metrics that are cruicial for sunderstaing churn and its financial impact. 
+In this project I focused on several key metrics that are crucial for understating churn and its financial impact. 
 - Churn rate: the percentage of customs who have left the company
-- renetion rate: the percentage of customers that have stayed with te company
-- average rever per user(ARPU): the average monthly revene per customer, highlighting the fincianll contribution of the customer base.
-- Revenue at risk: the potentiosal; trevenue that is lost if all churned customers had insetad stayed with the company
-- customer lifetime value : the totoal expected revenue per customer ove their tenure calcuiaterd by their monhtly charges and tenure
-- high value churners: churned customers witht he highest revenue contribuution
+- Retention rate: the percentage of customers that have stayed with the company
+- Average revenue per user(ARPU): the average monthly revenue per customer, highlighting the finically contribution of the customer base.
+- Revenue at risk: the potential; revenue that is lost if all churned customers had instead stayed with the company
+- Customer lifetime value : the total expected revenue per customer over their tenure calculated by their monthly charges and tenure
+- High value churners: churned customers with the highest revenue contribution
 
-# PowerBi dahsbaord 
-I designed the dahbaord as a thre page inertactuive report to give the best insights into the customer dataste. 
+# PowerBi dashboard 
+I designed the dashboard as a three page interactive report to give the best insights into the customer dataset. 
 
-## Page 1 - the overview 
-this page provides a basic overview highlights the customer health within the company
-- KPI cards for Total customers, Churn Rate, Retention RAte, ARPU RAte and REvenue at risk
-- combo charts for revenue at risk by tenure group, crevenue at risk by contract type and revenue at risk by payment method.
-- Table that includes the churn rate, ARPU, rention rate, revenue at risk, CLTV average and monthlyc harges by total customers and contract type
+## Page 1 - Overview 
+This page provides a basic overview highlights the customer health within the company
+- KPI cards for Total customers, Churn Rate, Retention Rate, ARPU Rate and Revenue at risk
+- Combo charts for revenue at risk by tenure group, revenue at risk by contract type and revenue at risk by payment method.
+- Table that includes the churn rate, ARPU, retention rate, revenue at risk, CLTV average and monthly charges by total customers and contract type
 
-## Page 2Customer churna nd revneu drivers 
-this page focuses on identofying the drivers or churn and how that impacts the customers 
-- churn rate by contract type
+## Page 2 - Customer churn and revenue drivers 
+This page focuses on identifying the drivers or churn and how that impacts the customers. 
+- Churn rate by contract type
 - ARPU and Churn rate by service count
-- churn rate byu internet servioce
-- churn rate by service count
-- churn rate by payment method
+- Churn rate by internet service
+- Churn rate by service count
+- Churn rate by payment method
 
-## Page 3 Revenue and CLTV analysis 
-this page provides analysis for the fincancial impactand lifetimevalue of the customers
+## Page 3 - Revenue and CLTV analysis 
+This page provides analysis for the financial impact and lifetime value of the customers.
 - CLTV by tenure group and contract type
-- revenue at risk by contract
-- revenue at risk by tenure group
-- KPI cards for reveneu at risk vy hgigh value chirners, reveneu at risk by contract type and revenue at risk by tenure group
-- table shwing payemnt method, tenure grpup, churn rate, revenue at risk and total customers
+- Revenue at risk by contract
+- Revenue at risk by tenure group
+- KPI cards for revenue at risk by high value churners, revenue at risk by contract type and revenue at risk by tenure group
+- Table showing payment method, tenure group, churn rate, revenue at risk and total customers
 
-#DAX Measures used
-Churn rate 
+# DAX Measures used
+## Churn rate 
 ```bash
 Churn Rate =
 VAR TotalCustomers =
 COUNT(customer_cleaned_data[CustomerID]) VAR ChurnedCustomers =
 SUM(customer_cleaned_data[Churn Value]) RETURN IF(TotalCustomers = 0, BLANK(), DIVIDE(ChurnedCustomers, TotalCustomers))
 ```
-reveneu at risk
+## Revenue at risk
 ```bash
 Revenue risk = CALCULATE(SUM(customer_cleaned_data[Monthly Charges]), customer_cleaned_data[Churn Value] = 1)
 ```
 
-CLTV 
+## CLTV 
 ```bash
 CLTV avg = AVERAGEX(
     'customer_cleaned_data',
@@ -103,7 +112,7 @@ CLTV avg = AVERAGEX(
 )
 ```
 
-high value churners
+## High Value Churners
 ```bash
 High Value Churner = 
 IF(
@@ -119,16 +128,15 @@ IF(
 )
 ```
 
-# Key Inisghts 
-based on my analysis we can see that the Month-to-Month contract ahve the highest chrtun rate which highl.ights the imporantance of loongterm reention stratagies. the high value churners also fall into the month-to-motn contract which syuggestsd theya re critical taregts for renetion campaigns. customers with certain payment methods and less services also ccorrelate with high churners wehioch guive sus ungsights into target ,arkeringa dn service improvements. encouraging customers to use more than two seerviceas can decrease the churn rate by at least 6.41%. from this analysis we see that custonmers with longer tenuire and multip year contracts are more likely to stay which inducates that contract type and tenure storngly influycen the churn rate. 
+# Key Insights 
+Based on my analysis we can see that the Month-to-Month contract have the highest carton rate which highlights the importance of long-term retention strategies. The high value churners also falls into the month-to-month contract which suggests they are critical targets for retention campaigns. Customers with certain payment methods and less services also correlate with high churners which give us insights into target marketing service improvements. Encouraging customers to use more than two services can decrease the churn rate by at least 6.41%. From this analysis we see that customers with longer tenure and multiple year contracts are more likely to stay which indicates that contract type and tenure strongly influence the churn rate. 
 
 
-# Tools anbd libraries
-for this project i mostly used python for the cleaning and analysis, this uncluded libraies such as numpy seabord. 
-i then used PowerBi to create the dahsboard and used a variatey opf differnt visualisations andf DaX measures to prvoide an insighful overview. 
+# Tools and libraries
+For this project I mostly used python for the cleaning and analysis, this unclouded libraries such as numpy and seaborn. 
+I then used PowerBI to create the dashboard and used a variety of different visualisations and Dax measures to provide an insightful overview. 
 
 ## How to Run
 ```bash
-
 git clone maison-r/Telco-Customer-Churn-Analysis
 ```
