@@ -9,7 +9,7 @@ Working with this dataset allowed me to analyse churn trends, identify high-risk
 To achieve this I used data cleaning technique, feature engineering, metric calculations and interactive visualisations using python and power BI. The final dashboard provides a comprehensive overview of the companies health enabling the business to target retention strategies effectively. 
 
 # Repo Navigation
-* /DataSet - raw dataset
+* /DataSet - raw dataset and cleaned dataset
 * /EDA & Analysis - Jupyter notebook for cleaning and analysis
 * /PowerBI & Insights = .pbix dashboard file
 
