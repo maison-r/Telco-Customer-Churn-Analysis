@@ -1,0 +1,23 @@
+What to include for tht dashbaord over view:
+
+Explain what the dashboard shows
+
+Summarise key insights (executive level)
+
+Tell the reader how to use the files
+
+Power BI Dashboard Overview
+
+The Power BI dashboard provides an interactive view of customer churn behaviour, revenue risk, and customer segmentation. It is designed to support both high-level executive decision-making and deeper exploratory analysis.
+
+Key insights from the dashboard include:
+
+Customers on month-to-month contracts exhibit significantly higher churn rates compared to long-term contracts.
+
+Short-tenure customers are more likely to churn, particularly within the first 12 months.
+
+A disproportionate share of revenue at risk is driven by a relatively small segment of high-value customers.
+
+Certain service combinations show stronger correlations with churn than others.
+
+
