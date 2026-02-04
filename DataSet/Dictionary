@@ -1,1 +1,12 @@
+Dictionary of columns
+
+CustomerID - A uniqie indetifiier for each customer
+Tenure Month -  How many months a customer has been with the compnay
+Tenure Group - What Tenure groupa  customer falls into from 0-12 months, 13-24 monhts, 25-48 months or 49+ months
+Total Charge - The total amount a customer pays each month 
+Churn Value - A binary value if a customer has churned, 1 = YES the customer churned, 0 = NO the customer has not churned 
+Churn Score - A value from 0-100 that is calculated using the predictive tool IBM SPSS Modeler. The higher the score, the more likely the customer will churn.
+CLTV - A customer lifetime value which is ca,luclyated by using corporate formulas and excisting data. The higher the value the more valuable a customer is. These types of customers generally pay more or would have a high impact on teh company if they were tp churn.
+Service Count - The number of services a customer is paying to use from the company. 
+
 
